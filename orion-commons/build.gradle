@@ -3,7 +3,6 @@ apply plugin: 'eclipse'
 apply plugin: 'maven'
 
 group = 'com.orion.commons'
-artifact='commons'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
 
