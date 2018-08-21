@@ -27,9 +27,11 @@ repositories {
 }
 
 dependencies {
- compile "org.gradle:gradle-tooling-api:4.9"
+    compile('org.springframework.boot:spring-boot-starter-data-jpa')
+    compile('com.h2database:h2')
     compile('com.orion.commons:orion-commons:1.0.0-SNAPSHOT')
     compile('org.codehaus.groovy:groovy:2.5.0')
-	compile('org.springframework.boot:spring-boot-starter')
+    compile('org.springframework.boot:spring-boot-devtools')
+	compile('org.springframework.boot:spring-boot-starter-web')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }

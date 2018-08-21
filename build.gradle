@@ -19,7 +19,6 @@ repositories {
 }
 
 dependencies {
- compile "org.gradle:gradle-tooling-api:4.9"
 }
 
 task ensureDirectory {
