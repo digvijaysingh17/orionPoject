@@ -4,6 +4,7 @@ buildscript {
 	}
 	repositories {
 		mavenCentral()
+		mavenLocal()
 	}
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
@@ -16,18 +17,19 @@ apply plugin: 'maven'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
-group = 'com.orion.product'
-version = '0.0.1-SNAPSHOT'
+group = 'com.orion.project'
+version = '1.0.0-SNAPSHOT'
 sourceCompatibility = 1.8
 
 repositories {
 	mavenCentral()
+	mavenLocal()
 }
 
-
 dependencies {
-    implementation('com.orion.commons:commons:0.0.1-SNAPSHOT')
-    implementation('org.codehaus.groovy:groovy:2.5.0')
+ compile "org.gradle:gradle-tooling-api:4.9"
+    compile('com.orion.commons:orion-commons:1.0.0-SNAPSHOT')
+    compile('org.codehaus.groovy:groovy:2.5.0')
 	compile('org.springframework.boot:spring-boot-starter')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
