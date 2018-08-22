@@ -13,9 +13,10 @@ buildscript {
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
-apply plugin: 'maven'
-apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'maven'
+apply plugin: 'maven-publish'
 
 group = 'com.orion.project'
 version = '1.0.0-SNAPSHOT'
@@ -25,15 +26,14 @@ repositories {
 	mavenCentral()
 	mavenLocal()
 }
+jar {
+    baseName = "$rootProject.name"
+    enabled=true
+}
 
 dependencies {
-    compile("com.orion.project:orion-commons:$version")
-    compile("com.orion.project:orion-auth-manager:$version")
-    compile('org.springframework.boot:spring-boot-starter-data-jpa')
-    compile('com.h2database:h2')
-    compile('org.codehaus.groovy:groovy:2.5.0')
-    compile('org.springframework.boot:spring-boot-devtools')
 	compile('org.springframework.boot:spring-boot-starter-web')
+	compile('org.springframework.boot:spring-boot-starter-security')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
-	compile("org.springframework.boot:spring-boot-starter-security")
+	testCompile('org.springframework.security:spring-security-test')
 }
