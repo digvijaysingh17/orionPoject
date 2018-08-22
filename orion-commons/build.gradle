@@ -2,13 +2,13 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'maven'
 
-group = 'com.orion.commons'
-artifact='commons'
-version = '0.0.1-SNAPSHOT'
+group = 'com.orion.project'
+version = '1.0.0-SNAPSHOT'
 sourceCompatibility = 1.8
 
 repositories {
 	mavenCentral()
+		mavenLocal()
 }
 
 

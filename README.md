@@ -6,9 +6,8 @@ Gradle         - 4.9
 JAVA           - 1.8
 Spring boot    - 2.0.4.RELEASE
 
-    Commands:-
+  initial project creation Commands:-
     
-Commands
 
 -- sdk install gradle
 

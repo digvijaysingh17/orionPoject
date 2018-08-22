@@ -1,0 +1,6 @@
+rootProject.name = 'orion-project'
+
+include 'orion-commons'
+include 'orion-config-manager'
+include 'orion-user-management'
+

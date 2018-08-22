@@ -1,0 +1,37 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'maven'
+
+group = 'com.orion.project'
+version = '1.0.0-SNAPSHOT'
+sourceCompatibility = 1.8
+
+ext{
+artifactDir="${buildDir}/dist"
+orionCommonsPath="${buildDir}/../orion-commons/build/libs/orion-commons-${version}.jar"
+orionConfigManagerPath="${buildDir}/../orion-config-manager/build/libs/orion-config-manager-${version}.jar"
+orionUserManagementPAth="${buildDir}/../orion-user-management/build/libs/orion-user-management-${version}.jar"
+archiveName="${rootProject.name}-${version}.zip"
+}
+repositories {
+	mavenCentral()
+	mavenLocal()
+}
+
+dependencies {
+}
+
+task ensureDirectory {
+doLast {
+print artifactDir
+mkdir artifactDir
+}
+}
+
+
+task packageDistribution(type: Zip) {
+    dependsOn ensureDirectory
+    from orionCommonsPath,orionConfigManagerPath,orionUserManagementPAth
+    into archiveName
+    destinationDir = file(artifactDir)
+}
